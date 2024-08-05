@@ -615,3 +615,728 @@ Finished building: default.size.stdout
  
 Finished building: first2.list
  
+12:02:05 **** Incremental Build of configuration Debug for project first2 ****
+make -j24 all 
+arm-none-eabi-size  first2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6672	     12	   1764	   8448	   2100	first2.elf
+Finished building: default.size.stdout
+ 
+12:02:22 **** Build of configuration Debug for project second ****
+make -j24 all 
+arm-none-eabi-size  second.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7824	     12	   1852	   9688	   25d8	second.elf
+Finished building: default.size.stdout
+ 
+12:09:06 **** Incremental Build of configuration Debug for project first2 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/FND_Controller.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/FND_Controller.d" -MT"Core/Src/FND_Controller.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/FND_Controller.o"
+../Core/Src/FND_Controller.c: In function 'digit4_show':
+../Core/Src/FND_Controller.c:79:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   79 |     if(showZero | n>9)send_port(_LED_0F[n2], 0b0010);
+      |                   ~^~
+../Core/Src/FND_Controller.c:80:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   80 |     if(showZero | n>99)send_port(_LED_0F[n3], 0b0100);
+      |                   ~^~~
+../Core/Src/FND_Controller.c:81:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   81 |     if(showZero | n>999)send_port(_LED_0F[n4], 0b1000);
+      |                   ~^~~~
+arm-none-eabi-gcc -o "first2.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\STM32cubeIDE\project\OJ\first2\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="first2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: first2.elf
+ 
+arm-none-eabi-size  first2.elf 
+arm-none-eabi-objdump -h -S first2.elf  > "first2.list"
+   text	   data	    bss	    dec	    hex	filename
+   6648	     12	   1764	   8424	   20e8	first2.elf
+Finished building: default.size.stdout
+ 
+Finished building: first2.list
+ 
+12:12:40 **** Incremental Build of configuration Debug for project second ****
+make -j24 all 
+arm-none-eabi-size  second.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7824	     12	   1852	   9688	   25d8	second.elf
+Finished building: default.size.stdout
+ 
+12:12:58 **** Build of configuration Debug for project first ****
+make -j24 all 
+arm-none-eabi-size  first.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8296	     12	   1836	  10144	   27a0	first.elf
+Finished building: default.size.stdout
+ 
+12:14:20 **** Build of configuration Debug for project first2 ****
+make -j24 all 
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o"
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f103c8tx.d" -MT"Core/Startup/startup_stm32f103c8tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Startup/startup_stm32f103c8tx.o" "../Core/Startup/startup_stm32f103c8tx.s"
+arm-none-eabi-gcc "../Core/Src/FND_Controller.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/FND_Controller.d" -MT"Core/Src/FND_Controller.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/FND_Controller.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_hal_msp.d" -MT"Core/Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f1xx.d" -MT"Core/Src/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32f1xx.o"
+../Core/Src/FND_Controller.c: In function 'digit4_show':
+../Core/Src/FND_Controller.c:90:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   90 |     if(showZero | n>9)send_port(_LED_0F[n2], 0b0010);
+      |                   ~^~
+../Core/Src/FND_Controller.c:91:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   91 |     if(showZero | n>99)send_port(_LED_0F[n3], 0b0100);
+      |                   ~^~~
+../Core/Src/FND_Controller.c:92:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   92 |     if(showZero | n>999)send_port(_LED_0F[n4], 0b1000);
+      |                   ~^~~~
+arm-none-eabi-gcc -o "first2.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\STM32cubeIDE\project\OJ\first2\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="first2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: first2.elf
+ 
+arm-none-eabi-size  first2.elf 
+arm-none-eabi-objdump -h -S first2.elf  > "first2.list"
+   text	   data	    bss	    dec	    hex	filename
+   7824	     12	   1852	   9688	   25d8	first2.elf
+Finished building: default.size.stdout
+ 
+Finished building: first2.list
+ 
+12:14:25 **** Incremental Build of configuration Debug for project first2 ****
+make -j24 all 
+arm-none-eabi-size  first2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7824	     12	   1852	   9688	   25d8	first2.elf
+Finished building: default.size.stdout
+ 
+12:18:08 **** Incremental Build of configuration Debug for project first2 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/FND_Controller.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/FND_Controller.d" -MT"Core/Src/FND_Controller.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/FND_Controller.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_hal_msp.d" -MT"Core/Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
+../Core/Src/FND_Controller.c: In function 'digit4_show':
+../Core/Src/main.c: In function 'main':
+../Core/Src/FND_Controller.c:90:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   90 |     if(showZero | n>9)send_port(_LED_0F[n2], 0b0010);
+      |                   ~^~
+../Core/Src/FND_Controller.c:91:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   91 |     if(showZero | n>99)send_port(_LED_0F[n3], 0b0100);
+      |                   ~^~~
+../Core/Src/FND_Controller.c:92:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   92 |     if(showZero | n>999)send_port(_LED_0F[n4], 0b1000);
+      |                   ~^~~~
+../Core/Src/main.c:98:11: error: 'hspi2' undeclared (first use in this function); did you mean 'hspi1'?
+   98 | init_fnd(&hspi2);
+      |           ^~~~~
+      |           hspi1
+../Core/Src/main.c:98:11: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+12:19:03 **** Incremental Build of configuration Debug for project first2 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/FND_Controller.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/FND_Controller.d" -MT"Core/Src/FND_Controller.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/FND_Controller.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/FND_Controller.c: In function 'send':
+../Core/Src/FND_Controller.c:64:26: error: 'mhspi' undeclared (first use in this function)
+   64 |         HAL_SPI_Transmit(mhspi, & X, 1, 100);
+      |                          ^~~~~
+../Core/Src/FND_Controller.c:64:26: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/FND_Controller.c: In function 'digit4_show':
+../Core/Src/FND_Controller.c:87:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   87 |     if(showZero | n>9)send_port(_LED_0F[n2], 0b0010);
+      |                   ~^~
+../Core/Src/FND_Controller.c:88:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   88 |     if(showZero | n>99)send_port(_LED_0F[n3], 0b0100);
+      |                   ~^~~
+../Core/Src/FND_Controller.c:89:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   89 |     if(showZero | n>999)send_port(_LED_0F[n4], 0b1000);
+      |                   ~^~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/FND_Controller.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+12:19:24 **** Incremental Build of configuration Debug for project first2 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/FND_Controller.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/FND_Controller.d" -MT"Core/Src/FND_Controller.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/FND_Controller.o"
+../Core/Src/FND_Controller.c: In function 'digit4_show':
+../Core/Src/FND_Controller.c:87:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   87 |     if(showZero | n>9)send_port(_LED_0F[n2], 0b0010);
+      |                   ~^~
+../Core/Src/FND_Controller.c:88:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   88 |     if(showZero | n>99)send_port(_LED_0F[n3], 0b0100);
+      |                   ~^~~
+../Core/Src/FND_Controller.c:89:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   89 |     if(showZero | n>999)send_port(_LED_0F[n4], 0b1000);
+      |                   ~^~~~
+arm-none-eabi-gcc -o "first2.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\STM32cubeIDE\project\OJ\first2\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="first2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: first2.elf
+ 
+arm-none-eabi-size  first2.elf 
+arm-none-eabi-objdump -h -S first2.elf  > "first2.list"
+   text	   data	    bss	    dec	    hex	filename
+   6584	     12	   1764	   8360	   20a8	first2.elf
+Finished building: default.size.stdout
+ 
+Finished building: first2.list
+ 
+12:19:46 **** Incremental Build of configuration Debug for project first2 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/FND_Controller.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/FND_Controller.d" -MT"Core/Src/FND_Controller.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/FND_Controller.o"
+../Core/Src/FND_Controller.c: In function 'digit4_show':
+../Core/Src/FND_Controller.c:87:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   87 |     if(showZero | n>9)send_port(_LED_0F[n2], 0b0010);
+      |                   ~^~
+../Core/Src/FND_Controller.c:88:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   88 |     if(showZero | n>99)send_port(_LED_0F[n3], 0b0100);
+      |                   ~^~~
+../Core/Src/FND_Controller.c:89:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   89 |     if(showZero | n>999)send_port(_LED_0F[n4], 0b1000);
+      |                   ~^~~~
+arm-none-eabi-gcc -o "first2.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\STM32cubeIDE\project\OJ\first2\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="first2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: first2.elf
+ 
+arm-none-eabi-size  first2.elf 
+arm-none-eabi-objdump -h -S first2.elf  > "first2.list"
+   text	   data	    bss	    dec	    hex	filename
+   6672	     12	   1764	   8448	   2100	first2.elf
+Finished building: default.size.stdout
+ 
+Finished building: first2.list
+ 
+12:53:58 **** Incremental Build of configuration Debug for project first2 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'MX_GPIO_Init':
+../Core/Src/main.c:272:21: error: 'GPIO_TEST_GPIO_Port' undeclared (first use in this function); did you mean 'GPIO_SW_GPIO_Port'?
+  272 |   HAL_GPIO_WritePin(GPIO_TEST_GPIO_Port, GPIO_TEST_Pin, GPIO_PIN_SET);
+      |                     ^~~~~~~~~~~~~~~~~~~
+      |                     GPIO_SW_GPIO_Port
+../Core/Src/main.c:272:21: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:272:42: error: 'GPIO_TEST_Pin' undeclared (first use in this function); did you mean 'GPIO_SW_Pin'?
+  272 |   HAL_GPIO_WritePin(GPIO_TEST_GPIO_Port, GPIO_TEST_Pin, GPIO_PIN_SET);
+      |                                          ^~~~~~~~~~~~~
+      |                                          GPIO_SW_Pin
+../Core/Src/main.c:298:25: error: 'PB0_TEMP_SET_UP_Pin' undeclared (first use in this function); did you mean 'PB0_TEMP_SETUP_Pin'?
+  298 |   GPIO_InitStruct.Pin = PB0_TEMP_SET_UP_Pin;
+      |                         ^~~~~~~~~~~~~~~~~~~
+      |                         PB0_TEMP_SETUP_Pin
+../Core/Src/main.c:301:17: error: 'PB0_TEMP_SET_UP_GPIO_Port' undeclared (first use in this function); did you mean 'PB0_TEMP_SETUP_GPIO_Port'?
+  301 |   HAL_GPIO_Init(PB0_TEMP_SET_UP_GPIO_Port, &GPIO_InitStruct);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 PB0_TEMP_SETUP_GPIO_Port
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+12:54:05 **** Incremental Build of configuration Debug for project first2 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'MX_GPIO_Init':
+../Core/Src/main.c:272:21: error: 'GPIO_TEST_GPIO_Port' undeclared (first use in this function); did you mean 'GPIO_SW_GPIO_Port'?
+  272 |   HAL_GPIO_WritePin(GPIO_TEST_GPIO_Port, GPIO_TEST_Pin, GPIO_PIN_SET);
+      |                     ^~~~~~~~~~~~~~~~~~~
+      |                     GPIO_SW_GPIO_Port
+../Core/Src/main.c:272:21: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:272:42: error: 'GPIO_TEST_Pin' undeclared (first use in this function); did you mean 'GPIO_SW_Pin'?
+  272 |   HAL_GPIO_WritePin(GPIO_TEST_GPIO_Port, GPIO_TEST_Pin, GPIO_PIN_SET);
+      |                                          ^~~~~~~~~~~~~
+      |                                          GPIO_SW_Pin
+../Core/Src/main.c:298:25: error: 'PB0_TEMP_SET_UP_Pin' undeclared (first use in this function); did you mean 'PB0_TEMP_SETUP_Pin'?
+  298 |   GPIO_InitStruct.Pin = PB0_TEMP_SET_UP_Pin;
+      |                         ^~~~~~~~~~~~~~~~~~~
+      |                         PB0_TEMP_SETUP_Pin
+../Core/Src/main.c:301:17: error: 'PB0_TEMP_SET_UP_GPIO_Port' undeclared (first use in this function); did you mean 'PB0_TEMP_SETUP_GPIO_Port'?
+  301 |   HAL_GPIO_Init(PB0_TEMP_SET_UP_GPIO_Port, &GPIO_InitStruct);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 PB0_TEMP_SETUP_GPIO_Port
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+12:54:34 **** Incremental Build of configuration Debug for project first2 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "first2.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\STM32cubeIDE\project\OJ\first2\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="first2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: first2.elf
+ 
+arm-none-eabi-size  first2.elf 
+arm-none-eabi-objdump -h -S first2.elf  > "first2.list"
+   text	   data	    bss	    dec	    hex	filename
+   6672	     12	   1764	   8448	   2100	first2.elf
+Finished building: default.size.stdout
+ 
+Finished building: first2.list
+ 
+12:57:10 **** Incremental Build of configuration Debug for project first2 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "first2.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\STM32cubeIDE\project\OJ\first2\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="first2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: first2.elf
+ 
+arm-none-eabi-size  first2.elf 
+arm-none-eabi-objdump -h -S first2.elf  > "first2.list"
+   text	   data	    bss	    dec	    hex	filename
+   6308	     12	   1764	   8084	   1f94	first2.elf
+Finished building: default.size.stdout
+ 
+Finished building: first2.list
+ 
+13:07:49 **** Incremental Build of configuration Debug for project first2 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/fnd_controller.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fnd_controller.d" -MT"Core/Src/fnd_controller.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fnd_controller.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_hal_msp.d" -MT"Core/Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f1xx.d" -MT"Core/Src/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32f1xx.o"
+../Core/Src/fnd_controller.c: In function 'digit4_show':
+../Core/Src/fnd_controller.c:78:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   78 |     if(showZero | n>9)send_port(_LED_0F[n2], 0b0010);
+      |                   ~^~
+../Core/Src/fnd_controller.c:79:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   79 |     if(showZero | n>99)send_port(_LED_0F[n3], 0b0100);
+      |                   ~^~~
+../Core/Src/fnd_controller.c:80:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   80 |     if(showZero | n>999)send_port(_LED_0F[n4], 0b1000);
+      |                   ~^~~~
+arm-none-eabi-gcc -o "first2.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\STM32cubeIDE\project\OJ\first2\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="first2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: first2.elf
+ 
+arm-none-eabi-size  first2.elf 
+arm-none-eabi-objdump -h -S first2.elf  > "first2.list"
+   text	   data	    bss	    dec	    hex	filename
+   6308	     12	   1764	   8084	   1f94	first2.elf
+Finished building: default.size.stdout
+ 
+Finished building: first2.list
+ 
+13:10:23 **** Incremental Build of configuration Debug for project first2 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function '_write':
+../Core/Src/main.c:72:5: warning: 'main' is normally a non-static function [-Wmain]
+   72 | int main(void)
+      |     ^~~~
+../Core/Src/main.c:184:13: error: invalid storage class for function 'MX_SPI1_Init'
+  184 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:222:13: error: invalid storage class for function 'MX_USART1_UART_Init'
+  222 | static void MX_USART1_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:255:13: error: invalid storage class for function 'MX_GPIO_Init'
+  255 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:326:1: error: expected declaration or statement at end of input
+  326 | }
+      | ^
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:54:13: warning: 'MX_GPIO_Init' used but never defined
+   54 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:55:13: warning: 'MX_USART1_UART_Init' used but never defined
+   55 | static void MX_USART1_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:56:13: warning: 'MX_SPI1_Init' used but never defined
+   56 | static void MX_SPI1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:317:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  317 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:255:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  255 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:222:13: warning: 'MX_USART1_UART_Init' defined but not used [-Wunused-function]
+  222 | static void MX_USART1_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:184:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+  184 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:147:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  147 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:72:5: warning: 'main' defined but not used [-Wunused-function]
+   72 | int main(void)
+      |     ^~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+13:11:55 **** Incremental Build of configuration Debug for project first2 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function '_write':
+../Core/Src/main.c:73:5: warning: 'main' is normally a non-static function [-Wmain]
+   73 | int main(void)
+      |     ^~~~
+../Core/Src/main.c:185:13: error: invalid storage class for function 'MX_SPI1_Init'
+  185 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:223:13: error: invalid storage class for function 'MX_USART1_UART_Init'
+  223 | static void MX_USART1_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:256:13: error: invalid storage class for function 'MX_GPIO_Init'
+  256 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:327:1: error: expected declaration or statement at end of input
+  327 | }
+      | ^
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:54:13: warning: 'MX_GPIO_Init' used but never defined
+   54 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:55:13: warning: 'MX_USART1_UART_Init' used but never defined
+   55 | static void MX_USART1_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:56:13: warning: 'MX_SPI1_Init' used but never defined
+   56 | static void MX_SPI1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:318:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  318 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:256:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  256 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:223:13: warning: 'MX_USART1_UART_Init' defined but not used [-Wunused-function]
+  223 | static void MX_USART1_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:185:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+  185 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:148:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  148 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:73:5: warning: 'main' defined but not used [-Wunused-function]
+   73 | int main(void)
+      |     ^~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+13:12:20 **** Incremental Build of configuration Debug for project first2 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'MX_GPIO_Init':
+../Core/Src/main.c:272:21: error: 'GPIO_TEST_GPIO_Port' undeclared (first use in this function); did you mean 'GPIO_SW_GPIO_Port'?
+  272 |   HAL_GPIO_WritePin(GPIO_TEST_GPIO_Port, GPIO_TEST_Pin, GPIO_PIN_SET);
+      |                     ^~~~~~~~~~~~~~~~~~~
+      |                     GPIO_SW_GPIO_Port
+../Core/Src/main.c:272:21: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:272:42: error: 'GPIO_TEST_Pin' undeclared (first use in this function); did you mean 'GPIO_SW_Pin'?
+  272 |   HAL_GPIO_WritePin(GPIO_TEST_GPIO_Port, GPIO_TEST_Pin, GPIO_PIN_SET);
+      |                                          ^~~~~~~~~~~~~
+      |                                          GPIO_SW_Pin
+../Core/Src/main.c:298:25: error: 'PB0_TEMP_SET_UP_Pin' undeclared (first use in this function); did you mean 'PB0_TEMP_SETUP_Pin'?
+  298 |   GPIO_InitStruct.Pin = PB0_TEMP_SET_UP_Pin;
+      |                         ^~~~~~~~~~~~~~~~~~~
+      |                         PB0_TEMP_SETUP_Pin
+../Core/Src/main.c:301:17: error: 'PB0_TEMP_SET_UP_GPIO_Port' undeclared (first use in this function); did you mean 'PB0_TEMP_SETUP_GPIO_Port'?
+  301 |   HAL_GPIO_Init(PB0_TEMP_SET_UP_GPIO_Port, &GPIO_InitStruct);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 PB0_TEMP_SETUP_GPIO_Port
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+13:12:56 **** Incremental Build of configuration Debug for project first2 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'MX_GPIO_Init':
+../Core/Src/main.c:272:21: error: 'GPIO_TEST_GPIO_Port' undeclared (first use in this function); did you mean 'GPIO_SW_GPIO_Port'?
+  272 |   HAL_GPIO_WritePin(GPIO_TEST_GPIO_Port, GPIO_TEST_Pin, GPIO_PIN_SET);
+      |                     ^~~~~~~~~~~~~~~~~~~
+      |                     GPIO_SW_GPIO_Port
+../Core/Src/main.c:272:21: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:272:42: error: 'GPIO_TEST_Pin' undeclared (first use in this function); did you mean 'GPIO_SW_Pin'?
+  272 |   HAL_GPIO_WritePin(GPIO_TEST_GPIO_Port, GPIO_TEST_Pin, GPIO_PIN_SET);
+      |                                          ^~~~~~~~~~~~~
+      |                                          GPIO_SW_Pin
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+13:13:06 **** Incremental Build of configuration Debug for project first2 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'MX_GPIO_Init':
+../Core/Src/main.c:290:25: error: 'GPIO_TEST_Pin' undeclared (first use in this function); did you mean 'GPIO_SW_Pin'?
+  290 |   GPIO_InitStruct.Pin = GPIO_TEST_Pin;
+      |                         ^~~~~~~~~~~~~
+      |                         GPIO_SW_Pin
+../Core/Src/main.c:290:25: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:294:17: error: 'GPIO_TEST_GPIO_Port' undeclared (first use in this function); did you mean 'GPIO_SW_GPIO_Port'?
+  294 |   HAL_GPIO_Init(GPIO_TEST_GPIO_Port, &GPIO_InitStruct);
+      |                 ^~~~~~~~~~~~~~~~~~~
+      |                 GPIO_SW_GPIO_Port
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+13:13:21 **** Incremental Build of configuration Debug for project first2 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "first2.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\STM32cubeIDE\project\OJ\first2\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="first2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: first2.elf
+ 
+arm-none-eabi-size  first2.elf 
+arm-none-eabi-objdump -h -S first2.elf  > "first2.list"
+   text	   data	    bss	    dec	    hex	filename
+   6336	     12	   1764	   8112	   1fb0	first2.elf
+Finished building: default.size.stdout
+ 
+Finished building: first2.list
+ 
+13:13:34 **** Incremental Build of configuration Debug for project first2 ****
+make -j24 all 
+arm-none-eabi-size  first2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6336	     12	   1764	   8112	   1fb0	first2.elf
+Finished building: default.size.stdout
+ 
+13:15:29 **** Build of configuration Debug for project first1 ****
+make -j24 all 
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o"
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f103c8tx.d" -MT"Core/Startup/startup_stm32f103c8tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Startup/startup_stm32f103c8tx.o" "../Core/Startup/startup_stm32f103c8tx.s"
+arm-none-eabi-gcc "../Core/Src/FND_Controller.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/FND_Controller.d" -MT"Core/Src/FND_Controller.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/FND_Controller.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_hal_msp.d" -MT"Core/Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f1xx.d" -MT"Core/Src/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32f1xx.o"
+../Core/Src/FND_Controller.c: In function 'digit4_show':
+../Core/Src/FND_Controller.c:90:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   90 |     if(showZero | n>9)send_port(_LED_0F[n2], 0b0010);
+      |                   ~^~
+../Core/Src/FND_Controller.c:91:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   91 |     if(showZero | n>99)send_port(_LED_0F[n3], 0b0100);
+      |                   ~^~~
+../Core/Src/FND_Controller.c:92:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   92 |     if(showZero | n>999)send_port(_LED_0F[n4], 0b1000);
+      |                   ~^~~~
+arm-none-eabi-gcc -o "first1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\STM32cubeIDE\project\OJ\first1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="first1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: first1.elf
+ 
+arm-none-eabi-size  first1.elf 
+arm-none-eabi-objdump -h -S first1.elf  > "first1.list"
+   text	   data	    bss	    dec	    hex	filename
+   7824	     12	   1852	   9688	   25d8	first1.elf
+Finished building: default.size.stdout
+ 
+Finished building: first1.list
+ 
+13:15:34 **** Incremental Build of configuration Debug for project first1 ****
+make -j24 all 
+arm-none-eabi-size  first1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7824	     12	   1852	   9688	   25d8	first1.elf
+Finished building: default.size.stdout
+ 
+13:26:08 **** Incremental Build of configuration Debug for project first1 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/FND_Controller.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/FND_Controller.d" -MT"Core/Src/FND_Controller.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/FND_Controller.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_hal_msp.d" -MT"Core/Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
+../Core/Src/FND_Controller.c: In function 'digit4_show':
+../Core/Src/FND_Controller.c:78:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   78 |     if(showZero | n>9)send_port(_LED_0F[n2], 0b0010);
+      |                   ~^~
+../Core/Src/FND_Controller.c:79:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   79 |     if(showZero | n>99)send_port(_LED_0F[n3], 0b0100);
+      |                   ~^~~
+../Core/Src/FND_Controller.c:80:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   80 |     if(showZero | n>999)send_port(_LED_0F[n4], 0b1000);
+      |                   ~^~~~
+../Core/Src/FND_Controller.c: In function 'digit4_temper':
+../Core/Src/FND_Controller.c:135:16: error: 'showZero' undeclared (first use in this function)
+  135 |             if(showZero | n>99)send_port(_LED_0F[n3], 0b0100);
+      |                ^~~~~~~~
+../Core/Src/FND_Controller.c:135:16: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/FND_Controller.c:137:1: error: expected declaration or statement at end of input
+  137 | }
+      | ^
+make: *** [Core/Src/subdir.mk:37: Core/Src/FND_Controller.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+13:27:48 **** Incremental Build of configuration Debug for project first1 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/FND_Controller.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/FND_Controller.d" -MT"Core/Src/FND_Controller.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/FND_Controller.o"
+../Core/Src/FND_Controller.c: In function 'digit4_show':
+../Core/Src/FND_Controller.c:78:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   78 |     if(showZero | n>9)send_port(_LED_0F[n2], 0b0010);
+      |                   ~^~
+../Core/Src/FND_Controller.c:79:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   79 |     if(showZero | n>99)send_port(_LED_0F[n3], 0b0100);
+      |                   ~^~~
+../Core/Src/FND_Controller.c:80:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   80 |     if(showZero | n>999)send_port(_LED_0F[n4], 0b1000);
+      |                   ~^~~~
+../Core/Src/FND_Controller.c: In function 'digit4_temper':
+../Core/Src/FND_Controller.c:137:1: error: expected declaration or statement at end of input
+  137 | }
+      | ^
+make: *** [Core/Src/subdir.mk:37: Core/Src/FND_Controller.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+13:29:19 **** Incremental Build of configuration Debug for project first1 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/FND_Controller.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/FND_Controller.d" -MT"Core/Src/FND_Controller.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/FND_Controller.o"
+../Core/Src/FND_Controller.c: In function 'digit4_show':
+../Core/Src/FND_Controller.c:78:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   78 |     if(showZero | n>9)send_port(_LED_0F[n2], 0b0010);
+      |                   ~^~
+../Core/Src/FND_Controller.c:79:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   79 |     if(showZero | n>99)send_port(_LED_0F[n3], 0b0100);
+      |                   ~^~~
+../Core/Src/FND_Controller.c:80:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   80 |     if(showZero | n>999)send_port(_LED_0F[n4], 0b1000);
+      |                   ~^~~~
+arm-none-eabi-gcc -o "first1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\STM32cubeIDE\project\OJ\first1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="first1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: first1.elf
+ 
+arm-none-eabi-size  first1.elf 
+arm-none-eabi-objdump -h -S first1.elf  > "first1.list"
+   text	   data	    bss	    dec	    hex	filename
+   6648	     12	   1764	   8424	   20e8	first1.elf
+Finished building: default.size.stdout
+ 
+Finished building: first1.list
+ 
+13:29:38 **** Incremental Build of configuration Debug for project first1 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "first1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\STM32cubeIDE\project\OJ\first1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="first1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: first1.elf
+ 
+arm-none-eabi-size  first1.elf 
+arm-none-eabi-objdump -h -S first1.elf  > "first1.list"
+   text	   data	    bss	    dec	    hex	filename
+   6648	     12	   1764	   8424	   20e8	first1.elf
+Finished building: default.size.stdout
+ 
+Finished building: first1.list
+ 
+13:31:41 **** Incremental Build of configuration Debug for project first1 ****
+make -j24 all 
+arm-none-eabi-size  first1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6648	     12	   1764	   8424	   20e8	first1.elf
+Finished building: default.size.stdout
+ 
+13:33:21 **** Incremental Build of configuration Debug for project first1 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/FND_Controller.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/FND_Controller.d" -MT"Core/Src/FND_Controller.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/FND_Controller.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/FND_Controller.c: In function 'digit4_show':
+../Core/Src/FND_Controller.c:78:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   78 |     if(showZero | n>9)send_port(_LED_0F[n2], 0b0010);
+      |                   ~^~
+../Core/Src/FND_Controller.c:79:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   79 |     if(showZero | n>99)send_port(_LED_0F[n3], 0b0100);
+      |                   ~^~~
+../Core/Src/FND_Controller.c:80:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   80 |     if(showZero | n>999)send_port(_LED_0F[n4], 0b1000);
+      |                   ~^~~~
+../Core/Src/FND_Controller.c: In function 'digit4_temper':
+../Core/Src/FND_Controller.c:126:19: warning: variable 'n2' set but not used [-Wunused-but-set-variable]
+  126 |           int n1, n2, n3, n4;
+      |                   ^~
+../Core/Src/FND_Controller.c:126:15: warning: variable 'n1' set but not used [-Wunused-but-set-variable]
+  126 |           int n1, n2, n3, n4;
+      |               ^~
+arm-none-eabi-gcc -o "first1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\STM32cubeIDE\project\OJ\first1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="first1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: first1.elf
+ 
+arm-none-eabi-size  first1.elf 
+arm-none-eabi-objdump -h -S first1.elf  > "first1.list"
+   text	   data	    bss	    dec	    hex	filename
+   6308	     12	   1764	   8084	   1f94	first1.elf
+Finished building: default.size.stdout
+ 
+Finished building: first1.list
+ 
+13:33:53 **** Incremental Build of configuration Debug for project first1 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "first1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\STM32cubeIDE\project\OJ\first1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="first1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: first1.elf
+ 
+arm-none-eabi-size  first1.elf 
+arm-none-eabi-objdump -h -S first1.elf  > "first1.list"
+   text	   data	    bss	    dec	    hex	filename
+   6608	     12	   1764	   8384	   20c0	first1.elf
+Finished building: default.size.stdout
+ 
+Finished building: first1.list
+ 
+13:34:08 **** Incremental Build of configuration Debug for project first1 ****
+make -j24 all 
+arm-none-eabi-size  first1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6608	     12	   1764	   8384	   20c0	first1.elf
+Finished building: default.size.stdout
+ 
+13:34:23 **** Incremental Build of configuration Debug for project first1 ****
+make -j24 all 
+arm-none-eabi-size  first1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6608	     12	   1764	   8384	   20c0	first1.elf
+Finished building: default.size.stdout
+ 
+13:37:55 **** Build of configuration Debug for project second ****
+make -j24 all 
+arm-none-eabi-size  second.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7824	     12	   1852	   9688	   25d8	second.elf
+Finished building: default.size.stdout
+ 
+13:38:16 **** Incremental Build of configuration Debug for project first1 ****
+make -j24 all 
+arm-none-eabi-size  first1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6608	     12	   1764	   8384	   20c0	first1.elf
+Finished building: default.size.stdout
+ 
+13:43:42 **** Incremental Build of configuration Debug for project first1 ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/FND_Controller.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/FND_Controller.d" -MT"Core/Src/FND_Controller.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/FND_Controller.o"
+../Core/Src/FND_Controller.c: In function 'digit4_show':
+../Core/Src/FND_Controller.c:78:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   78 |     if(showZero | n>9)send_port(_LED_0F[n2], 0b0010);
+      |                   ~^~
+../Core/Src/FND_Controller.c:79:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   79 |     if(showZero | n>99)send_port(_LED_0F[n3], 0b0100);
+      |                   ~^~~
+../Core/Src/FND_Controller.c:80:20: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   80 |     if(showZero | n>999)send_port(_LED_0F[n4], 0b1000);
+      |                   ~^~~~
+arm-none-eabi-gcc -o "first1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\STM32cubeIDE\project\OJ\first1\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="first1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: first1.elf
+ 
+arm-none-eabi-size  first1.elf 
+arm-none-eabi-objdump -h -S first1.elf  > "first1.list"
+   text	   data	    bss	    dec	    hex	filename
+   6648	     12	   1764	   8424	   20e8	first1.elf
+Finished building: default.size.stdout
+ 
+Finished building: first1.list
+ 
+13:46:09 **** Incremental Build of configuration Debug for project first ****
+make -j24 all 
+arm-none-eabi-size  first.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8296	     12	   1836	  10144	   27a0	first.elf
+Finished building: default.size.stdout
+ 
