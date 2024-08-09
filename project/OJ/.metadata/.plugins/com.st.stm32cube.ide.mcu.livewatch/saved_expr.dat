@@ -1,0 +1,5 @@
+ds18b20
+m_time
+*time_us
+ONEWIRE_DELAY
+&time_us

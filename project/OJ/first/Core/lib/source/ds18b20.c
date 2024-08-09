@@ -560,4 +560,9 @@ uint8_t DS18B20_AllDone(OneWire_t* OneWire)
 	return OneWire_ReadBit(OneWire);
 }
 
+////// jh_08.09
 
+float getCurrentTemper(){
+
+	return ds18b20[0].Temperature;
+}

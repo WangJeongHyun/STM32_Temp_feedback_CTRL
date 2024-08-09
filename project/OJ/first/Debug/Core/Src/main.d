@@ -21,11 +21,15 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
- ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- ../Core/Inc/FND_Controller.h ../Core/Inc/main.h
+ ../Core/Inc/FND_Controller.h ../Core/Inc/main.h \
+ D:/STM32cubeIDE/project/OJ/first/Core/lib/include/onewire.h \
+ D:/STM32cubeIDE/project/OJ/first/Core/lib/include/ds18b20.h \
+ D:/STM32cubeIDE/project/OJ/first/Core/lib/include/onewire.h \
+ D:/STM32cubeIDE/project/OJ/first/Core/lib/include/ds18b20Config.h \
+ ../Core/Inc/heaterController.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
@@ -49,9 +53,13 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
-../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 ../Core/Inc/FND_Controller.h:
 ../Core/Inc/main.h:
+D:/STM32cubeIDE/project/OJ/first/Core/lib/include/onewire.h:
+D:/STM32cubeIDE/project/OJ/first/Core/lib/include/ds18b20.h:
+D:/STM32cubeIDE/project/OJ/first/Core/lib/include/onewire.h:
+D:/STM32cubeIDE/project/OJ/first/Core/lib/include/ds18b20Config.h:
+../Core/Inc/heaterController.h:

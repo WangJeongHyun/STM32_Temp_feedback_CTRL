@@ -11,3 +11,4 @@
 ../Core/lib/source/ds18b20.c:505:9:DS18B20_DisableAlarmTemperature	24	static
 ../Core/lib/source/ds18b20.c:551:9:DS18B20_AlarmSearch	16	static
 ../Core/lib/source/ds18b20.c:557:9:DS18B20_AllDone	16	static
+../Core/lib/source/ds18b20.c:565:7:getCurrentTemper	4	static
