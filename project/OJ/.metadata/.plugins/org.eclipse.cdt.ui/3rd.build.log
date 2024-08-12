@@ -1,0 +1,21 @@
+08:30:58 **** Incremental Build of configuration Debug for project 3rd ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/STM32cubeIDE/project/OJ/3rd/Core/lib/include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
+../Core/Src/stm32f1xx_it.c: In function 'TIM3_IRQHandler':
+../Core/Src/stm32f1xx_it.c:224:1: warning: implicit declaration of function 'digit4_temper' [-Wimplicit-function-declaration]
+  224 | digit4_temper((int)(getCurrentTemper()*10));
+      | ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "3rd.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\STM32cubeIDE\project\OJ\3rd\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3rd.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3rd.elf
+ 
+arm-none-eabi-size  3rd.elf 
+arm-none-eabi-objdump -h -S 3rd.elf  > "3rd.list"
+   text	   data	    bss	    dec	    hex	filename
+  13592	     12	   1860	  15464	   3c68	3rd.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3rd.list
+ 
+
+08:30:59 Build Finished. 0 errors, 1 warnings. (took 588ms)
+
