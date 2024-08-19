@@ -26,6 +26,7 @@ typedef struct
 //###################################################################################
 
 extern Ds18b20Sensor_t	ds18b20[_DS18B20_MAX_SENSORS];
+extern Ds18b20Sensor_t	temperSensor;
 
 //###################################################################################
 /* Every onewire chip has different ROM code, but all the same chips has same family code */
@@ -79,7 +80,18 @@ uint8_t 	DS18B20_DisableAlarmTemperature(OneWire_t* OneWireStruct, uint8_t* ROM)
 uint8_t 	DS18B20_AlarmSearch(OneWire_t* OneWireStruct);
 uint8_t 	DS18B20_AllDone(OneWire_t* OneWireStruct);
 
-float getCurrentTemper();
+float getCurrentTemper(void);
+
+bool	Ds18b20_Init_simple(void);
+
+uint8_t isTemperSensorInit(void);
+uint8_t isBusy(void);
+uint8_t isConverting(void);
+
+void StartConverting(void);
+void checkConverting(void);
+float getTemper(void);
+
 //###################################################################################
 
  

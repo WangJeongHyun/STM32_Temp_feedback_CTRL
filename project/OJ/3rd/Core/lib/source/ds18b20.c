@@ -5,6 +5,7 @@
 
 //###################################################################################
 Ds18b20Sensor_t	ds18b20[_DS18B20_MAX_SENSORS];
+Ds18b20Sensor_t temperSensor;
 
 OneWire_t OneWire;
 uint8_t	  OneWireDevices;
@@ -24,6 +25,49 @@ void	Ds18b20_Init(osPriority Priority)
   Ds18b20Handle = osThreadCreate(osThread(myTask_Ds18b20), NULL);	
 }
 #else
+// bool	Ds18b20_Init 분해
+static uint8_t m_init =0;
+static uint8_t m_busy =0;
+static uint8_t m_isConverting;
+
+// return 함수
+uint8_t isTemperSensorInit(){
+	return m_init;
+}// init이 됐으면 1로 반환이 된다??
+uint8_t isBusy(){
+	return m_busy;
+}// init이 됐으면 1로 반환이 된다??
+uint8_t isConverting(){
+	return m_isConverting;
+}// init이 됐으면 1로 반환이 된다??
+
+bool	Ds18b20_Init_simple(){
+	m_init =0;
+	OneWire_Init(&OneWire,_DS18B20_GPIO ,_DS18B20_PIN);
+	// 주소를 찾는 동작 하드코딩 OneWire_First(&OneWire);
+	//함수 위주로 본다 (값이 쓰이는거 위주로)
+	OneWire.ROM_NO[0] = 0x28;
+	OneWire.ROM_NO[1] = 0xf9;
+	OneWire.ROM_NO[2] = 0x1e;
+	OneWire.ROM_NO[3] = 0x43;
+	OneWire.ROM_NO[4] = 0xd4;
+	OneWire.ROM_NO[5] = 0xe1;
+	OneWire.ROM_NO[6] = 0x3c;
+	OneWire.ROM_NO[7] = 0x67;
+
+	OneWire_GetFullROM(&OneWire, temperSensor.Address);
+
+	Ds18b20Delay(50);
+	DS18B20_SetResolution(&OneWire, temperSensor.Address,	DS18B20_Resolution_12bits);
+	Ds18b20Delay(50);
+	DS18B20_DisableAlarmTemperature(&OneWire, temperSensor.Address);
+
+	m_init =1;
+
+	return true;
+}
+
+
 bool	Ds18b20_Init(void)
 {
 	uint8_t	Ds18b20TryToFind=5;
@@ -33,13 +77,13 @@ bool	Ds18b20_Init(void)
 		TempSensorCount = 0;	
 		while(HAL_GetTick() < 3000)
 			Ds18b20Delay(100);
-		OneWireDevices = OneWire_First(&OneWire);
+		OneWireDevices = OneWire_First(&OneWire); //주소를 찾는 동작 -> 하드코딩
 		while (OneWireDevices)
 		{
 			Ds18b20Delay(100);
 			TempSensorCount++;
 			OneWire_GetFullROM(&OneWire, ds18b20[TempSensorCount-1].Address);
-			OneWireDevices = OneWire_Next(&OneWire);
+			OneWireDevices = OneWire_Next(&OneWire);//다음 장치 주소 찾는 동작
 		}
 		if(TempSensorCount>0)
 			break;
@@ -58,6 +102,31 @@ bool	Ds18b20_Init(void)
 }
 #endif
 //###########################################################################################
+
+void StartConverting(){
+
+	m_busy = 1; // 바쁜 동안
+	DS18B20_StartAll(&OneWire);
+	m_isConverting =1;
+	m_busy = 0; // 안바쁜동안으로 분기
+}
+//	while (!DS18B20_AllDone(&OneWire))
+void checkConverting(){
+
+	m_busy =1; //비트를 읽고 있냐 아니냐
+	m_isConverting = !DS18B20_AllDone(&OneWire); // 완료 1, 비 완료 0
+	m_busy =0; //비트를 읽고 있냐 아니냐
+
+}
+
+float getTemper(){
+
+	Ds18b20Delay(100);
+	m_busy =1; //비트를 읽고 있냐 아니냐
+	temperSensor.DataIsValid = DS18B20_Read(&OneWire, temperSensor.Address, &temperSensor.Temperature);
+	m_busy =0;
+	return temperSensor.Temperature;
+}
 bool	Ds18b20_ManualConvert(void)
 {
 	#if (_DS18B20_USE_FREERTOS==1)
@@ -564,5 +633,5 @@ uint8_t DS18B20_AllDone(OneWire_t* OneWire)
 
 float getCurrentTemper(){
 
-	return ds18b20[0].Temperature;
+	return temperSensor.Temperature;
 }

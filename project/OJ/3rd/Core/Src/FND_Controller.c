@@ -54,8 +54,8 @@ void send(__uint8_t X) {
 }
 
 void send_port(__uint8_t X, __uint8_t port) {
-	send(X);
-	send(port);
+	send(X);// 8bit
+	send(port); // 4 bit
 	HAL_GPIO_WritePin(FND_RCLK_GPIO_Port, FND_RCLK_Pin, LOW);
 	HAL_GPIO_WritePin(FND_RCLK_GPIO_Port, FND_RCLK_Pin, HIGH);
 }

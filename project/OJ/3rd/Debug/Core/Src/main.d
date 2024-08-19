@@ -25,10 +25,10 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
  ../Core/Inc/FND_Controller.h ../Core/Inc/main.h \
- D:/STM32cubeIDE/project/OJ/3rd/Core/lib/include/onewire.h \
- D:/STM32cubeIDE/project/OJ/3rd/Core/lib/include/ds18b20.h \
- D:/STM32cubeIDE/project/OJ/3rd/Core/lib/include/onewire.h \
- D:/STM32cubeIDE/project/OJ/3rd/Core/lib/include/ds18b20Config.h \
+ C:/Users/82103/Documents/STM32_Temp_feedback_CTRL/project/OJ/3rd/Core/lib/include/onewire.h \
+ C:/Users/82103/Documents/STM32_Temp_feedback_CTRL/project/OJ/3rd/Core/lib/include/ds18b20.h \
+ C:/Users/82103/Documents/STM32_Temp_feedback_CTRL/project/OJ/3rd/Core/lib/include/onewire.h \
+ C:/Users/82103/Documents/STM32_Temp_feedback_CTRL/project/OJ/3rd/Core/lib/include/ds18b20Config.h \
  ../Core/Inc/heaterController.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
@@ -58,8 +58,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 ../Core/Inc/FND_Controller.h:
 ../Core/Inc/main.h:
-D:/STM32cubeIDE/project/OJ/3rd/Core/lib/include/onewire.h:
-D:/STM32cubeIDE/project/OJ/3rd/Core/lib/include/ds18b20.h:
-D:/STM32cubeIDE/project/OJ/3rd/Core/lib/include/onewire.h:
-D:/STM32cubeIDE/project/OJ/3rd/Core/lib/include/ds18b20Config.h:
+C:/Users/82103/Documents/STM32_Temp_feedback_CTRL/project/OJ/3rd/Core/lib/include/onewire.h:
+C:/Users/82103/Documents/STM32_Temp_feedback_CTRL/project/OJ/3rd/Core/lib/include/ds18b20.h:
+C:/Users/82103/Documents/STM32_Temp_feedback_CTRL/project/OJ/3rd/Core/lib/include/onewire.h:
+C:/Users/82103/Documents/STM32_Temp_feedback_CTRL/project/OJ/3rd/Core/lib/include/ds18b20Config.h:
 ../Core/Inc/heaterController.h:

@@ -1,6 +1,6 @@
 Core/lib/source/ds18b20.o: ../Core/lib/source/ds18b20.c \
- D:/STM32cubeIDE/project/OJ/3rd/Core/lib/include/ds18b20.h \
- D:/STM32cubeIDE/project/OJ/3rd/Core/lib/include/onewire.h \
+ C:/Users/82103/Documents/STM32_Temp_feedback_CTRL/project/OJ/3rd/Core/lib/include/ds18b20.h \
+ C:/Users/82103/Documents/STM32_Temp_feedback_CTRL/project/OJ/3rd/Core/lib/include/onewire.h \
  ../Core/Inc/main.h ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -26,9 +26,9 @@ Core/lib/source/ds18b20.o: ../Core/lib/source/ds18b20.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- D:/STM32cubeIDE/project/OJ/3rd/Core/lib/include/ds18b20Config.h
-D:/STM32cubeIDE/project/OJ/3rd/Core/lib/include/ds18b20.h:
-D:/STM32cubeIDE/project/OJ/3rd/Core/lib/include/onewire.h:
+ C:/Users/82103/Documents/STM32_Temp_feedback_CTRL/project/OJ/3rd/Core/lib/include/ds18b20Config.h
+C:/Users/82103/Documents/STM32_Temp_feedback_CTRL/project/OJ/3rd/Core/lib/include/ds18b20.h:
+C:/Users/82103/Documents/STM32_Temp_feedback_CTRL/project/OJ/3rd/Core/lib/include/onewire.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
@@ -55,4 +55,4 @@ D:/STM32cubeIDE/project/OJ/3rd/Core/lib/include/onewire.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
-D:/STM32cubeIDE/project/OJ/3rd/Core/lib/include/ds18b20Config.h:
+C:/Users/82103/Documents/STM32_Temp_feedback_CTRL/project/OJ/3rd/Core/lib/include/ds18b20Config.h:

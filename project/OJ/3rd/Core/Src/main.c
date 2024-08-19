@@ -74,6 +74,7 @@ static void MX_TIM3_Init(void);
   */
 int main(void)
 {
+	  float temper = 0.0;
 
   /* USER CODE BEGIN 1 */
 
@@ -82,7 +83,8 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+
+	HAL_Init();
 
   /* USER CODE BEGIN Init */
 
@@ -101,11 +103,12 @@ int main(void)
   MX_TIM2_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-HAL_TIM_Base_Start_IT(&htim2);//timer interrupt
+//HAL_TIM_Base_Start_IT(&htim2);//timer interrupt
 HAL_TIM_Base_Start_IT(&htim3);//timer interrupt
 
 init_fnd();
-Ds18b20_Init();
+//Ds18b20_Init();
+Ds18b20_Init_simple();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -113,12 +116,23 @@ Ds18b20_Init();
 
   while (1)
   {
-	  Ds18b20_ManualConvert();
-	  if (getCurrentTemper()>30 && getHeaterState()== t_On )
-	  {
-		  hearterControll(t_Off);
-	  }else if(getCurrentTemper()<30 && getHeaterState()== t_Off)
-		  hearterControll(t_On);
+	  if(!isConverting()){
+		  StartConverting();
+	  }
+
+
+	  	  checkConverting();
+
+	  if(!isConverting()){
+	  	  temper = getTemper();
+	  	}
+
+	  //Ds18b20_ManualConvert();
+//	  if (getCurrentTemper()>30 && getHeaterState()== t_On )
+//	  {
+//		  hearterControll(t_Off);
+//	  }else if(getCurrentTemper()<30 && getHeaterState()== t_Off)
+//		  hearterControll(t_On);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
