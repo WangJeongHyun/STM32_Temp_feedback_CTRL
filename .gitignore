@@ -1,0 +1,29 @@
+# 빌드 디렉토리 무시
+/build/
+/Debug/
+/Release/
+
+# CubeMX 자동 생성 파일
+.mxproject
+.cproject
+.project
+
+# IDE 설정 파일 무시
+*.launch
+.settings/
+.vscode/
+
+# 바이너리 파일 무시
+*.bin
+*.elf
+*.hex
+*.map
+*.o
+*.d
+
+# 로그 파일 무시
+*.log
+
+# 백업 파일 무시
+*~
+*.swp
