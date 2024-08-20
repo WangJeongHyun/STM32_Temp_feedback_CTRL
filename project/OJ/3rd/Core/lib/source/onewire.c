@@ -20,6 +20,13 @@
 #include "ds18b20Config.h"
 //#include "tim.h"
 
+static uint8_t m_busy_line = 0;
+uint8_t isBusyLine(){
+
+	return m_busy_line;
+}
+
+
 void ONEWIRE_DELAY(uint16_t time_us)
 {
 	_DS18B20_TIMER.Instance->CNT = 0;
@@ -54,6 +61,7 @@ void ONEWIRE_OUTPUT(OneWire_t *gp)
 }
 void OneWire_Init(OneWire_t* OneWireStruct, GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin) 
 {	
+	m_busy_line = 0;
 	HAL_TIM_Base_Start(&_DS18B20_TIMER);
 
 	OneWireStruct->GPIOx = GPIOx;
@@ -76,11 +84,14 @@ inline uint8_t OneWire_Reset(OneWire_t* OneWireStruct)
 	ONEWIRE_OUTPUT(OneWireStruct);
 	ONEWIRE_DELAY(480);
 	ONEWIRE_DELAY(20);
+
+	m_busy_line = 1;
 	/* Release line and wait for 70us */
 	ONEWIRE_INPUT(OneWireStruct);
 	ONEWIRE_DELAY(70);
 	/* Check bit value */
 	i = HAL_GPIO_ReadPin(OneWireStruct->GPIOx, OneWireStruct->GPIO_Pin);
+	m_busy_line = 0;
 	
 	/* Delay for 410 us */
 	ONEWIRE_DELAY(410);
@@ -90,6 +101,9 @@ inline uint8_t OneWire_Reset(OneWire_t* OneWireStruct)
 
 inline void OneWire_WriteBit(OneWire_t* OneWireStruct, uint8_t bit)
 {
+
+	m_busy_line = 1;
+
 	if (bit) 
 	{
 		/* Set line low */
@@ -118,6 +132,8 @@ inline void OneWire_WriteBit(OneWire_t* OneWireStruct, uint8_t bit)
 		ONEWIRE_DELAY(5);
 		ONEWIRE_INPUT(OneWireStruct);
 	}
+
+	m_busy_line = 0;
 
 }
 

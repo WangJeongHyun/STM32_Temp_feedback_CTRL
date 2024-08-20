@@ -33,13 +33,20 @@ static uint8_t m_isConverting;
 // return 함수
 uint8_t isTemperSensorInit(){
 	return m_init;
-}// init이 됐으면 1로 반환이 된다??
+}
+
+// init이 됐으면 1로 반환이 된다??
 uint8_t isBusy(){
-	return m_busy;
-}// init이 됐으면 1로 반환이 된다??
+
+	return isBusyLine();
+	//	return m_busy;
+}
+
+// init이 됐으면 1로 반환이 된다??
 uint8_t isConverting(){
 	return m_isConverting;
-}// init이 됐으면 1로 반환이 된다??
+}
+
 
 bool	Ds18b20_Init_simple(){
 	m_init =0;
