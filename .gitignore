@@ -27,3 +27,7 @@
 # 백업 파일 무시
 *~
 *.swp
+
+# 추가 
+git rm --cached *.ini
+git rm --cached *.xml
