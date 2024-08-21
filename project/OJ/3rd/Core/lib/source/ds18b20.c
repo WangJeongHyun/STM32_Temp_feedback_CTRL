@@ -134,6 +134,8 @@ float getTemper(){
 	m_busy =0;
 	return temperSensor.Temperature;
 }
+
+
 bool	Ds18b20_ManualConvert(void)
 {
 	#if (_DS18B20_USE_FREERTOS==1)
