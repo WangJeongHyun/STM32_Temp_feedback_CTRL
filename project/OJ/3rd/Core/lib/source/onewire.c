@@ -106,45 +106,43 @@ inline void OneWire_WriteBit(OneWire_t* OneWireStruct, uint8_t bit)
 	if (bit) 
 	{
 		/* Set line low */
+		m_busy_line = 1;
 		ONEWIRE_LOW(OneWireStruct);
 		ONEWIRE_OUTPUT(OneWireStruct);
-
-		m_busy_line = 1;
 		ONEWIRE_DELAY(10);
 		m_busy_line = 0;
 
-		
+
+		m_busy_line = 1;
 		/* Bit high */
 		ONEWIRE_INPUT(OneWireStruct);
-		
 		/* Wait for 55 us and release the line */
-		m_busy_line = 1;
-		ONEWIRE_DELAY(55);
 		m_busy_line = 0;
 
-
+		ONEWIRE_DELAY(55);
+		
+		m_busy_line = 1;
 		ONEWIRE_INPUT(OneWireStruct);
+		m_busy_line = 0;
+
 	} 
 	else 
 	{
+		m_busy_line = 1;
 		/* Set line low */
 		ONEWIRE_LOW(OneWireStruct);
 		ONEWIRE_OUTPUT(OneWireStruct);
-
-		m_busy_line = 1;
-		ONEWIRE_DELAY(65);
 		m_busy_line = 0;
+
+		ONEWIRE_DELAY(65);
 		
+		m_busy_line = 1;
 		/* Bit high */
 		ONEWIRE_INPUT(OneWireStruct);
-		
 		/* Wait for 5 us and release the line */
-
-		m_busy_line = 1;
 		ONEWIRE_DELAY(5);
-		m_busy_line = 0;
-
 		ONEWIRE_INPUT(OneWireStruct);
+		m_busy_line = 0;
 	}
 
 
@@ -152,22 +150,23 @@ inline void OneWire_WriteBit(OneWire_t* OneWireStruct, uint8_t bit)
 
 inline uint8_t OneWire_ReadBit(OneWire_t* OneWireStruct) 
 {
+
 	uint8_t bit = 0;
 	/* Line low */
+
+	m_busy_line = 1;
 	ONEWIRE_LOW(OneWireStruct);
 	ONEWIRE_OUTPUT(OneWireStruct);
-
-	m_busy_line = 1;
 	ONEWIRE_DELAY(2);
 	m_busy_line = 0;
-	
-	/* Release line */
-	ONEWIRE_INPUT(OneWireStruct);
 
 	m_busy_line = 1;
+	/* Release line */
+	ONEWIRE_INPUT(OneWireStruct);
 	ONEWIRE_DELAY(10);
 	m_busy_line = 0;
 
+	m_busy_line = 1;
 	/* Read line value */
 	if (HAL_GPIO_ReadPin(OneWireStruct->GPIOx, OneWireStruct->GPIO_Pin)) {
 		/* Bit is HIGH */
@@ -175,9 +174,8 @@ inline uint8_t OneWire_ReadBit(OneWire_t* OneWireStruct)
 	}
 	
 	/* Wait 50us to complete 60us period */
-	m_busy_line = 1;
+	m_busy_line = 0;
 	ONEWIRE_DELAY(50);
-	m_busy_line = 1;
 
 	/* Return bit value */
 	return bit;
